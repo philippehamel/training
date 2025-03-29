@@ -1,4 +1,4 @@
-package guru.springframework.sfgdi;
+package guru.springframework.injection;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
