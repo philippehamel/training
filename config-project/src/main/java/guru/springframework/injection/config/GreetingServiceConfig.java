@@ -1,5 +1,7 @@
 package guru.springframework.injection.config;
 
+import com.springframework.pets.PerServiceFactory;
+import com.springframework.pets.PetService;
 import guru.springframework.injection.Repository.EnglishGreetingRepository;
 import guru.springframework.injection.Repository.EnglishGreetingRepositoryImpl;
 import guru.springframework.injection.services.*;
@@ -10,6 +12,23 @@ import org.springframework.context.annotation.Profile;
 
 @Configuration
 public class GreetingServiceConfig {
+
+    @Bean
+    PerServiceFactory perServiceFactory(){
+        return new PerServiceFactory();
+    }
+
+    @Profile({"dog", "default"})
+    @Bean
+    PetService dogPetService(PerServiceFactory perServiceFactory){
+        return perServiceFactory.getPetService("dog");
+    };
+
+    @Profile("cat")
+    @Bean
+    PetService catPetService(PerServiceFactory perServiceFactory){
+        return perServiceFactory.getPetService("cat");
+    };
 
     @Bean
     EnglishGreetingRepository englishGreetingRepository(){
