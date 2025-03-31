@@ -1,13 +1,31 @@
 package guru.springframework.injection.config;
 
-import guru.springframework.injection.services.ConstructorGreetingService;
-import guru.springframework.injection.services.PropertyInjectedGreetingService;
-import guru.springframework.injection.services.SetterInjectedGreetingService;
+import guru.springframework.injection.services.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.Profile;
 
-//@Configuration
+@Configuration
 public class GreetingServiceConfig {
+
+    @Profile("EN")
+    @Bean
+    I18nEnglishGreetingService i18nService(){
+        return new I18nEnglishGreetingService();
+    }
+
+    @Profile("ES")
+    @Bean("i18nService")
+    I18NSpanishService i18NSpanishService(){
+        return new I18NSpanishService();
+    }
+
+    @Primary
+    @Bean
+    PrimaryGreetingService primaryGreetingService(){
+        return new PrimaryGreetingService();
+    }
 
     @Bean
     ConstructorGreetingService constructorGreetingService(){
