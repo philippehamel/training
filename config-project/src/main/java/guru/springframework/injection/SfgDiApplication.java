@@ -4,7 +4,10 @@ import guru.springframework.injection.controllers.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.stereotype.Component;
 
+@ComponentScan(basePackages = {"guru.springframework", "com.springframework"})
 @SpringBootApplication
 public class SfgDiApplication {
 
