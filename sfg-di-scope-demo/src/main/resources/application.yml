@@ -1,7 +1,19 @@
 spring:
   profiles:
-    active: dog, EN, qa
+    active:
+      -  dog
+      -  EN
+      -  dev
 phil:
   username: ymlUserName
   password: ymlPassword
   url: ymlUrl
+
+---
+
+spring:
+  profiles: production
+phil:
+    username: ymlProdUserName
+    password: ymlProdPassword
+    url: ymlProdUrl
