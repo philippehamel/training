@@ -7,7 +7,7 @@ spring:
 phil:
   username: ymlUserName
   password: ymlPassword
-  url: ymlUrl
+  jdbcUrl: ymlUrl
 
 ---
 
@@ -16,4 +16,4 @@ spring:
 phil:
     username: ymlProdUserName
     password: ymlProdPassword
-    url: ymlProdUrl
+    jdbcUrl: ymlProdUrl
