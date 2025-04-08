@@ -1,11 +1,15 @@
 package com.recipeSite.webApp.model;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Lob;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import lombok.Getter;
 import lombok.Setter;
@@ -27,10 +31,14 @@ public class Recipe {
     private String URL;
     private String directions;
     // private Difficulty difficulty;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "recipe")
+    private Set<Ingredient> ingredients = new HashSet<>();
+
     @Lob
     private Byte[] image;
 
     @OneToOne(cascade = CascadeType.ALL)
-    private Notes notes;
+    private Note notes;
 
 }

@@ -10,7 +10,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-public class Notes {
+public class Note {
 
     @Id
     private Long id;
