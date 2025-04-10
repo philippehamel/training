@@ -8,7 +8,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "recipe")
 @Getter
 @Setter
 public class Recipe {
@@ -23,6 +22,8 @@ public class Recipe {
     private Integer servings;
     private String source;
     private String URL;
+
+    @Lob
     private String directions;
 
     @Enumerated(value = EnumType.STRING)
@@ -41,6 +42,6 @@ public class Recipe {
     @JoinTable(name = "recipe_category",
             joinColumns = @JoinColumn(name = "recipe_id"),
             inverseJoinColumns = @JoinColumn(name = "category_id"))
-    private Set<Category> category;
+    private Set<Category> category = new HashSet<>();
 
 }

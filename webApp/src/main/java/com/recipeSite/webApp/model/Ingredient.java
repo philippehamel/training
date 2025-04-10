@@ -8,7 +8,6 @@ import lombok.Setter;
 import java.math.BigDecimal;
 
 @Entity
-@Table(name = "ingredient")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -20,7 +19,7 @@ public class Ingredient {
     private String description;
     private BigDecimal amount;
 
-    @OneToOne(fetch = FetchType.EAGER)
+    @ManyToOne
     private UnitOfMeasurement uom;
 
     @ManyToOne
