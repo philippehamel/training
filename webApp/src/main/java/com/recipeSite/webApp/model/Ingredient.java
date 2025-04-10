@@ -32,5 +32,7 @@ public class Ingredient {
         this.recipe = recipe;
     }
 
+    public Ingredient(String ripeAvocados, BigDecimal bigDecimal, UnitOfMeasurement eachUom) {
+    }
 }
 
