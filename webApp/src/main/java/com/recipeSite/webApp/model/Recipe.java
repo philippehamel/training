@@ -29,13 +29,13 @@ public class Recipe {
     private Difficulty difficulty;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "recipe")
-    private Set<Ingredient> ingredients = new HashSet<>();
+    private Set<Ingredient> ingredient = new HashSet<>();
 
     @Lob
     private Byte[] image;
 
     @OneToOne(cascade = CascadeType.ALL)
-    private Note notes;
+    private Note note;
 
     @ManyToMany
     @JoinTable(name = "recipe_category",
