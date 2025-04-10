@@ -6,9 +6,10 @@ import lombok.Setter;
 
 import java.math.BigDecimal;
 
+@Entity
+@Table(name = "ingredient")
 @Getter
 @Setter
-@Entity
 public class Ingredient {
 
     @Id

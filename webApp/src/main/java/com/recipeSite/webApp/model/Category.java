@@ -6,9 +6,11 @@ import lombok.Setter;
 
 import java.util.Set;
 
+
+@Entity
+@Table(name = "category")
 @Getter
 @Setter
-@Entity
 public class Category {
 
     @Id

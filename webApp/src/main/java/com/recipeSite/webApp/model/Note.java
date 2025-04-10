@@ -4,9 +4,10 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+@Entity
+@Table(name = "note")
 @Getter
 @Setter
-@Entity
 public class Note {
 
     @Id
