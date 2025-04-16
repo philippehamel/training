@@ -1,20 +1,29 @@
 package com.recipeSite.webApp.controller;
 
-import com.recipeSite.webApp.model.Recipe;
-import com.recipeSite.webApp.service.RecipeService;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
+
+import java.util.HashSet;
+import java.util.Set;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.ui.Model;
 
-import java.util.HashSet;
-import java.util.Set;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.ArgumentMatchers.eq;
-import static org.mockito.Mockito.*;
+import com.recipeSite.webApp.model.Recipe;
+import com.recipeSite.webApp.service.RecipeService;
 
 class IndexControllerTest {
 
@@ -30,6 +39,19 @@ class IndexControllerTest {
     public void setUp() {
         MockitoAnnotations.openMocks(this);
         indexController = new IndexController(recipeService);
+    }
+
+    @Test
+    public void testMockMVC() {
+        MockMvc mockMvc = MockMvcBuilders.standaloneSetup(indexController).build();
+        try {
+            mockMvc.perform(get("/"))
+                    .andExpect(status().isOk())
+                    .andExpect(view().name("index"))
+                    .andExpect(model().attributeExists("recipes"));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Test
