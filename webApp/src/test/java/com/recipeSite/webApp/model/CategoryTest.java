@@ -20,4 +20,13 @@ class CategoryTest {
         category.setId(idValue);
         assertEquals(idValue, category.getId());
     }
+
+    @Test
+    public void getDescription() throws Exception {
+    }
+
+    @Test
+    public void getRecipes() throws Exception {
+    }
+
 }

@@ -80,14 +80,16 @@
                         <table class="table table-hover">
                             <thead>
                             <tr>
-                                <th class="rounded-left">ID</th>
-                                <th class="rounded-right">Description</th>
+                                <th class="rounded-start fw-semibold text-nowrap">ID</th>
+                                <th class="fw-semibold">Description</th>
+                                <th class="rounded-end fw-semibold text-center">View</th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr th:each="recipe : ${recipes}">
                                 <td th:text="${recipe.id}">1</td>
                                 <td th:text="${recipe.description}">Sample Recipe</td>
+                                <td><a href="#" th:href="@{'/recipe/show/' + ${recipe.id}}">View</a></td>
                             </tr>
                             </tbody>
                         </table>

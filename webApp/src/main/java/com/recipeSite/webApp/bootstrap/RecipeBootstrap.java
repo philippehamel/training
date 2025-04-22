@@ -198,6 +198,54 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
         tacosRecipe.getCategory().add(mexicanCategory);
 
         recipes.add(tacosRecipe);
+
+        Recipe pastaBologneseRecipe = new Recipe();
+        pastaBologneseRecipe.setDescription("Classic Pasta Bolognese");
+        pastaBologneseRecipe.setCookingTime(60);
+        pastaBologneseRecipe.setPreparationTime(20);
+        pastaBologneseRecipe.setServings(6);
+        pastaBologneseRecipe.setDifficulty(Difficulty.MODERATE);
+        pastaBologneseRecipe.setDirections("1. Brown meat\n2. Add vegetables\n3. Simmer sauce\n4. Cook pasta\n5. Combine and serve");
+        pastaBologneseRecipe.addIngredient(new Ingredient("Ground Beef", new BigDecimal(1), pintUom));
+        pastaBologneseRecipe.addIngredient(new Ingredient("Spaghetti", new BigDecimal(1), pintUom));
+        recipes.add(pastaBologneseRecipe);
+
+        Recipe caesarSaladRecipe = new Recipe();
+        caesarSaladRecipe.setDescription("Classic Caesar Salad");
+        caesarSaladRecipe.setPreparationTime(15);
+        caesarSaladRecipe.setCookingTime(0);
+        caesarSaladRecipe.setDifficulty(Difficulty.EASY);
+        caesarSaladRecipe.addIngredient(new Ingredient("Romaine Lettuce", new BigDecimal(2), eachUom));
+        caesarSaladRecipe.addIngredient(new Ingredient("Parmesan Cheese", new BigDecimal(1), cupsUom));
+        recipes.add(caesarSaladRecipe);
+
+        Recipe chocolateCakeRecipe = new Recipe();
+        chocolateCakeRecipe.setDescription("Chocolate Layer Cake");
+        chocolateCakeRecipe.setPreparationTime(30);
+        chocolateCakeRecipe.setCookingTime(45);
+        chocolateCakeRecipe.setDifficulty(Difficulty.MODERATE);
+        chocolateCakeRecipe.addIngredient(new Ingredient("Flour", new BigDecimal(3), cupsUom));
+        chocolateCakeRecipe.addIngredient(new Ingredient("Cocoa Powder", new BigDecimal(1), cupsUom));
+        recipes.add(chocolateCakeRecipe);
+
+        Recipe fishTacosRecipe = new Recipe();
+        fishTacosRecipe.setDescription("Fish Tacos with Slaw");
+        fishTacosRecipe.setPreparationTime(25);
+        fishTacosRecipe.setCookingTime(15);
+        fishTacosRecipe.setDifficulty(Difficulty.MODERATE);
+        fishTacosRecipe.addIngredient(new Ingredient("White Fish", new BigDecimal(1), pintUom));
+        fishTacosRecipe.addIngredient(new Ingredient("Cabbage Slaw", new BigDecimal(2), cupsUom));
+        recipes.add(fishTacosRecipe);
+
+        Recipe smoothieBowlRecipe = new Recipe();
+        smoothieBowlRecipe.setDescription("Acai Smoothie Bowl");
+        smoothieBowlRecipe.setPreparationTime(10);
+        smoothieBowlRecipe.setCookingTime(0);
+        smoothieBowlRecipe.setDifficulty(Difficulty.EASY);
+        smoothieBowlRecipe.addIngredient(new Ingredient("Frozen Acai", new BigDecimal(2), cupsUom));
+        smoothieBowlRecipe.addIngredient(new Ingredient("Banana", new BigDecimal(1), eachUom));
+        recipes.add(smoothieBowlRecipe);
+
         return recipes;
     }
 
