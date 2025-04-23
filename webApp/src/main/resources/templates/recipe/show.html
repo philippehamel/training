@@ -94,8 +94,9 @@
                     <div class="recipe-info">
                         <h5><i class="fas fa-list me-2"></i>Ingredients:</h5>
                         <ul class="list-unstyled ms-4">
-                            <li th:each="ingredient : ${recipe.ingredient}"
-                                th:text="${ingredient.amount + ' ' + ingredient.uom.description + ' of ' + ingredient.description}">1 Cup of milk</li>
+                            <li th:each="ingredient : ${recipe.ingredient}">
+                                <span th:text="${ingredient.amount + ' ' + (ingredient.uom != null ? ingredient.uom.description : '') + ' ' + ingredient.description}">1 Cup of milk</span>
+                            </li>
                         </ul>
                     </div>
                     <div class="recipe-info">
