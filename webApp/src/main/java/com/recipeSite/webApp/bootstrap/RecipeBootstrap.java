@@ -30,7 +30,7 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
     }
 
     private String formatDirections(String... steps) {
-        return String.join("\n", steps);
+        return String.join("<br/>", steps);
     }
 
     private List<Recipe> getRecipes() {
