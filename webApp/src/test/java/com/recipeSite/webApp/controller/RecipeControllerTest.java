@@ -16,9 +16,6 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import com.recipeSite.webApp.model.Recipe;
 import com.recipeSite.webApp.service.RecipeService;
 
-/**
- * Created by jt on 6/19/17.
- */
 public class RecipeControllerTest {
 
 
