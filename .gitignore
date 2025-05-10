@@ -33,3 +33,5 @@ build/
 .vscode/
 
 sfg-di-scope-demo/.env
+
+.DS_Store
